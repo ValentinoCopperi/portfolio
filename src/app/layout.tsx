@@ -20,6 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/logo.png" />
+
+      </head>
       <Providers>
         <body className={`${inter.className} min-h-screen bg-background text-foreground flex`}>
           <div className="flex-1 flex flex-col">
