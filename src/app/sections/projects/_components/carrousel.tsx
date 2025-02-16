@@ -56,7 +56,7 @@ const Carrousel = ({activeProject}:Props) => {
                                             />
                                         </motion.div>
                                     </DialogTrigger>
-                                    <DialogContent className="max-w-[90vw] max-h-[90vh] w-auto">
+                                    <DialogContent className="w-full md:max-w-[70vw] max-h-[90vh] ">
                                         <DialogHeader>
                                             <DialogTitle>
                                                 <Link href={activeProject.links.demo} target='_blank'>

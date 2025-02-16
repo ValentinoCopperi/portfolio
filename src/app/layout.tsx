@@ -25,14 +25,14 @@ export default function RootLayout({
 
       </head>
       <Providers>
-        <body className={`${inter.className} min-h-screen bg-background text-foreground flex`}>
+        <body className={`${inter.className} min-h-screen bg-background text-foreground flex overflow-x-hidden`}>
           <div className="flex-1 flex flex-col">
             <header className="sticky backdrop-blur-md z-50 top-0 right-0 w-full flex justify-around items-center  p-6 border-b border-border/50">
                 <h1 className="font-semibold">Valentino Copperi</h1>
                 <CvBtn/>
                 <ScrollToTopBtn/>
             </header>
-            <main className=" flex-grow w-[95%] md:w-[75%] lg:w-[65%] mx-auto border-border/50 border-r border-l border-b">{children}</main>
+            <main className=" w-full md:w-[75%] lg:w-[65%] md:mx-auto border-border/50 border-r border-l border-b">{children}</main>
             <Footer/>
           </div>
         </body>
