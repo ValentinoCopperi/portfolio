@@ -25,7 +25,7 @@ export default function RootLayout({
 
       </head>
       <Providers>
-        <body className={`${inter.className} min-h-screen bg-background text-foreground flex overflow-x-hidden`}>
+        <body className={`${inter.className} max-w-screen min-h-screen bg-background text-foreground flex overflow-x-hidden`}>
           <div className="flex-1 flex flex-col">
             <header className="sticky backdrop-blur-md z-50 top-0 right-0 w-full flex justify-around items-center  p-6 border-b border-border/50">
                 <h1 className="font-semibold">Valentino Copperi</h1>
