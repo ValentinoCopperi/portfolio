@@ -1,5 +1,6 @@
 import React from 'react'
 import { ThemeProvider } from './ui/theme-provider'
+import { Analytics } from "@vercel/analytics/react"
 
 
 
@@ -12,6 +13,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
       disableTransitionOnChange
     >
       {children}
+      <Analytics/>
     </ThemeProvider>
   )
 }
