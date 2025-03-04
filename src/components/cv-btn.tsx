@@ -4,10 +4,10 @@ import { Button } from './ui/button'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from './ui/dropdown-menu'
 
 const CvBtn = () => {
-    const handleDownload = (language : "ingles" | "español") => {
+    const handleDownload = (language : "ingles" | "espanol") => {
         const link = document.createElement('a')
-        link.href = `/cv-valentino-${language}.pdf`
-        link.download = `/cv-valentino-${language}.pdf`
+        link.href = `/cv-valentino-${language}-2025.pdf`
+        link.download = `/cv-valentino-${language}-2025.pdf`
         link.click()
     }
     return (
@@ -26,7 +26,7 @@ const CvBtn = () => {
                     </Button>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                    <Button variant="ghost" onClick={()=>handleDownload("español")}>
+                    <Button variant="ghost" onClick={()=>handleDownload("espanol")}>
                         Spanish
                     </Button>
                 </DropdownMenuItem>
