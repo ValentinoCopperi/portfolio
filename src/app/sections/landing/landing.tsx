@@ -14,7 +14,7 @@ const Landing = () => {
     return (
         <div>
 
-            <section className="flex flex-col lg:flex-row items-center justify-between px-4 py-20 md:px-6 xl:px-20 gap-10">
+            <section className="flex flex-col lg:flex-row items-center justify-between px-4 py-20 md:px-6 xl:px-20 ">
                 <div className="flex flex-col space-y-6 max-w-2xl">
                     <div className="flex items-center gap-2">
                         <Badge variant="secondary" className="bg-secondary/20">

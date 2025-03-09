@@ -1,13 +1,16 @@
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 import TerminalAchivements from "./_components/terminal";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 
 export function Achievements() {
     return (
-        <div>
+        <div className="w-full">
 
             <div className='text-center py-16 relative border-border/50 border-b border-t'>
-                <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-balance">Achievements</h2>
+                <TextAnimate className="text-3xl md:text-5xl font-bold tracking-tighter text-balance">
+                    About Me
+                </TextAnimate>
                 <p className="mt-6 text-balance text-muted-foreground">
                     Throughout my journey as a developer, Ive had the opportunity to complete numerous projects, acquire valuable skills, and contribute to innovative solutions. Here are some key highlights of my career:
                 </p>
@@ -22,7 +25,8 @@ export function Achievements() {
                 />
             </div>
 
-            <div className="py-6">
+            <div className="py-6 text-wrap breack-words max-w-[300px] mx-auto
+            md:max-w-[100%]">
                 <TerminalAchivements />
             </div>
 

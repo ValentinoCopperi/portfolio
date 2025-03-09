@@ -32,7 +32,7 @@ export default function RootLayout({
                 <CvBtn/>
                 <ScrollToTopBtn/>
             </header>
-            <main className=" w-full md:w-[75%] lg:w-[65%] md:mx-auto border-border/50 border-r border-l border-b">{children}</main>
+            <main className=" w-[98%] md:w-[85%] lg:w-[65%] mx-auto md:border-border/50 md:border-r md:border-l md:border-b">{children}</main>
             <Footer/>
           </div>
         </body>

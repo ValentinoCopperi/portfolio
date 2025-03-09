@@ -1,4 +1,5 @@
 import { FlickeringGrid } from '@/components/magicui/flickering-grid'
+import { TextAnimate } from '@/components/magicui/text-animate'
 import { Card, CardContent } from '@/components/ui/card'
 import { skills } from '@/lib/skills'
 import React from 'react'
@@ -7,7 +8,9 @@ const SkillsGrid = () => {
   return (
     <section >
       <div className='text-center py-16 relative border-border/50 border-b border-t'>
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-balance">My Skills</h2>
+        <TextAnimate className="text-3xl md:text-5xl font-bold tracking-tighter text-balance">
+                        My Skills
+        </TextAnimate>
 
         <FlickeringGrid
           className="absolute inset-0 z-0 "
@@ -18,7 +21,7 @@ const SkillsGrid = () => {
           flickerChance={0.1}
         />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-4 py-12 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4 py-12 max-w-7xl mx-auto">
         {skills.map((skill) => (
           <Card
             key={skill.id}

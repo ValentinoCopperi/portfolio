@@ -2,12 +2,15 @@ import React from 'react'
 import { ContactForm } from './_components/contact-form'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { FlickeringGrid } from '@/components/magicui/flickering-grid'
+import { TextAnimate } from '@/components/magicui/text-animate'
 
 const Contact = () => {
     return (
         <section id="contact-section" className="bg-card border-t border-border/50">
             <div className='text-center py-12 relative border-border/50 border-b'>
-                <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-balance">Lets Connect</h2>
+                <TextAnimate className="text-3xl md:text-5xl font-bold tracking-tighter text-balance">
+                    Contact me
+                </TextAnimate>
                 <p className="mt-6 text-balance text-muted-foreground">
                     If you are interested in collaborating on a project, need help with a technical challenge, or just want to discuss programming, feel free to get in touch. Im always excited to connect with like-minded professionals and explore new opportunities.
                 </p>

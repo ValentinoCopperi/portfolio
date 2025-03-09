@@ -1,14 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { SiNextdotjs, SiNestjs, SiReact, SiTypescript, SiSpringboot, SiTailwindcss } from "@icons-pack/react-simple-icons"
-
+import { SiNextdotjs, SiReact, SiTypescript, SiSpringboot, SiTailwindcss, SiMysql} from "@icons-pack/react-simple-icons"
 const icons = [
-  { icon: <SiNextdotjs size={30} />, label: "Next.js", color: "#000000" },
-  { icon: <SiNestjs size={30} />, label: "NestJS", color: "#E0234E" },
   { icon: <SiReact size={30} />, label: "React", color: "#61DAFB" },
+  { icon: <SiNextdotjs size={30} />, label: "Next.js", color: "#000000" },
   { icon: <SiTypescript size={30} />, label: "TypeScript", color: "#3178C6" },
   { icon: <SiSpringboot size={30} />, label: "Spring Boot", color: "#6DB33F" },
+  { icon: <SiMysql size={40} />, label: "SQL", color: "#E0234E" },
   { icon: <SiTailwindcss size={30} />, label: "Tailwind", color: "#38BDF8" },
 ]
 
@@ -29,7 +28,7 @@ const StackIcons = () => {
             <motion.div
               className="text-4xl"
               animate={{
-                color: ["#a3a3a3", "#e5e5e5", "#a3a3a3"], // Oscilación entre text-neutral-400 (gray-400) y text-neutral-200 (gray-200)
+                color: ["#a3a3a3", "#ffffff", "#a3a3a3"], // Oscilación entre text-neutral-400 (gray-400) y text-neutral-200 (gray-200)
               }}
               transition={{
                 duration: 2, // Duración del ciclo

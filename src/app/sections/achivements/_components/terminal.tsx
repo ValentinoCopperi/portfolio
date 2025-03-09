@@ -3,7 +3,7 @@ import { AnimatedSpan, Terminal, TypingAnimation } from "@/components/magicui/te
 
 const TerminalAchivements = () => {
     return (
-        <Terminal className="w-[80%] mx-auto">
+        <Terminal className=" w-full md:w-[80%] md:mx-auto">
             <TypingAnimation>&gt; display achievements</TypingAnimation>
 
             <AnimatedSpan delay={1500} className="text-green-500">
