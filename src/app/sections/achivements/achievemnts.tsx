@@ -9,7 +9,7 @@ export function Achievements() {
 
             <div className='text-center py-16 relative border-border/50 border-b border-t'>
                 <TextAnimate className="text-3xl md:text-5xl font-bold tracking-tighter text-balance">
-                    About Me
+                    Achievements
                 </TextAnimate>
                 <p className="mt-6 text-balance text-muted-foreground">
                     Throughout my journey as a developer, Ive had the opportunity to complete numerous projects, acquire valuable skills, and contribute to innovative solutions. Here are some key highlights of my career:

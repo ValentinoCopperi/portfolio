@@ -14,6 +14,7 @@ const Projects = () => {
     <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-4 py-6 px-2">
       
       <div className="col-span-1 flex flex-col space-y-2">
+        <h1 className='font-bold text-2xl p-1'>Projects:</h1>
         {projects.map((proj,idx) => (
           <SideBar key={idx} project={proj} activeProject={activeProject} setActiveProject={setActiveProject}/>
         ))}
