@@ -7,7 +7,7 @@ import { TextAnimate } from '@/components/magicui/text-animate'
 const Contact = () => {
     return (
         <section id="contact-section" className="bg-card border-t border-border/50">
-            <div className='text-center py-12 relative border-border/50 border-b'>
+            <div className='text-center py-24 relative border-border/50 border-b'>
                 <TextAnimate className="text-3xl md:text-5xl font-bold tracking-tighter text-balance">
                     Contact me
                 </TextAnimate>

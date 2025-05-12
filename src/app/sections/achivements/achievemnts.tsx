@@ -7,7 +7,7 @@ export function Achievements() {
     return (
         <div className="w-full">
 
-            <div className='text-center py-16 relative border-border/50 border-b border-t'>
+            <div className='text-center py-24 relative border-border/50 border-b border-t'>
                 <TextAnimate className="text-3xl md:text-5xl font-bold tracking-tighter text-balance">
                     Achievements
                 </TextAnimate>
@@ -25,7 +25,7 @@ export function Achievements() {
                 />
             </div>
 
-            <div className="py-6 text-wrap breack-words max-w-[300px] mx-auto
+            <div className="py-6 text-wrap overflow-y-auto max-w-[300px] mx-auto
             md:max-w-[100%]">
                 <TerminalAchivements />
             </div>

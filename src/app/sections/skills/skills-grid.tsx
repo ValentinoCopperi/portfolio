@@ -7,10 +7,13 @@ import React from 'react'
 const SkillsGrid = () => {
   return (
     <section >
-      <div className='text-center py-16 relative border-border/50 border-b border-t'>
+      <div className='text-center py-24 relative border-border/50 border-b border-t'>
         <TextAnimate className="text-3xl md:text-5xl font-bold tracking-tighter text-balance">
-                        My Skills
+          My Skills
         </TextAnimate>
+        <p className="mt-6 text-balance text-muted-foreground">
+          I have a wide range of skills that I have acquired over the years. I am a full stack developer and I have a passion for learning new technologies.
+        </p>
 
         <FlickeringGrid
           className="absolute inset-0 z-0 "
@@ -21,7 +24,7 @@ const SkillsGrid = () => {
           flickerChance={0.1}
         />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4 py-12 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4 py-20 max-w-7xl mx-auto">
         {skills.map((skill) => (
           <Card
             key={skill.id}
@@ -33,7 +36,7 @@ const SkillsGrid = () => {
               </div>
               <h3 className="text-lg font-semibold text-white mb-3">{skill.title}</h3>
               <p className="text-zinc-400 text-sm mb-4 flex-grow">{skill.description}</p>
-              
+
             </CardContent>
           </Card>
         ))}

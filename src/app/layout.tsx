@@ -5,12 +5,16 @@ import Providers from "@/components/provider"
 import Footer from "@/components/footer"
 import ScrollToTopBtn from "@/components/scroll-to-top-btn"
 import CvBtn from "@/components/cv-btn"
+import LoopCarga from "@/components/loop-carga"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "Valentino Copperi",
   description: "Portfolio of a Full Stack Developer specialized in React and Next.js",
+  icons: {
+    icon: "/favicon.ico",
+  },
 }
 
 export default function RootLayout({
@@ -20,10 +24,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/logo.png" />
-
-      </head>
       <Providers>
         <body className={`${inter.className} max-w-screen min-h-screen bg-background text-foreground flex overflow-x-hidden`}>
           <div className="flex-1 flex flex-col">
@@ -32,10 +32,11 @@ export default function RootLayout({
                 <CvBtn/>
                 <ScrollToTopBtn/>
             </header>
-            <main className=" w-[98%] md:w-[85%] lg:w-[65%] mx-auto md:border-border/50 md:border-r md:border-l md:border-b">{children}</main>
+            <main className=" w-[98%] md:w-[85%] lg:w-[75%] mx-auto md:border-border/50 md:border-r md:border-l md:border-b">{children}</main>
             <Footer/>
           </div>
         </body>
+        <LoopCarga/>
       </Providers>
     </html>
   )

@@ -42,7 +42,7 @@ export const projects: Project[] = [
             demo: "https://twitter-app-valentino.vercel.app",
             repository: "https://github.com/valentino/twitter-app"
         },
-        technologies: ["Next.js", "Tailwind", "MongoDB", "Node.js", "TypeScript", "Prisma", "ShadCN"],
+        technologies: ["Next.js", "Tailwind", "MongoDB", "Java","Spring Boot", "TypeScript", "SQL"],
         createdAt: "December 2024",
         images: ["twitter-app-1.png", "twitter-app-2.png", "twitter-app-3.png", "twitter-app-4.png"],
         functions: [
@@ -51,12 +51,12 @@ export const projects: Project[] = [
                 description: "Implemented Google authentication with NextAuth, storing user data in MongoDB."
             },
             {
-                title: "Database ORM",
-                description: "Used Prisma to interact with MongoDB efficiently and securely."
+                title: "SQL",
+                description: "Used SQL to interact with MongoDB efficiently and securely."
             },
             {
-                title: "UI Components",
-                description: "Styled with Tailwind CSS and ShadCN for a modern UI."
+                title: "Java Spring Boot",
+                description: "Used Spring Boot to build the backend of the application."
             },
             {
                 title: "Middleware Security",
