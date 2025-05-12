@@ -122,7 +122,7 @@ const Landing = () => {
               </VideoText>
             </div>
           </div>
-          <div className="block md:hidden">
+          <div className="block lg:hidden">
             <div className=" h-[95px] ">
               <VideoText src="/video-9.mp4" fontSize={"50"} fontWeight={"bold"}>
                 FULL STACK
