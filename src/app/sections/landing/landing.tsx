@@ -112,7 +112,7 @@ const Landing = () => {
           </motion.div>
           <div className="hidden lg:block">
             <div className=" h-[95px] ">
-              <VideoText src="/video-9.mp4" fontSize={"110"}>
+              <VideoText src="/video-9.mp4" fontSize={"80"}>
                 FULL STACK
               </VideoText>
             </div>
@@ -122,7 +122,7 @@ const Landing = () => {
               </VideoText>
             </div>
           </div>
-          <div className="block lg:hidden">
+          <div className="block md:hidden">
             <div className=" h-[95px] ">
               <VideoText src="/video-9.mp4" fontSize={"50"} fontWeight={"bold"}>
                 FULL STACK
@@ -167,7 +167,7 @@ const Landing = () => {
           className="hidden lg:block relative w-full max-w-xl aspect-square"
           initial={{ opacity: 0, x: 100 }}
           animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
-          transition={{ duration: 0.8, delay: 2.8 }}
+          transition={{ duration: 0.8, delay: 2.5 }}
         >
           <div className="w-full h-full">
             <Animation />
