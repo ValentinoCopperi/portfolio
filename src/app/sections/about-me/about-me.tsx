@@ -5,7 +5,7 @@ import React from 'react'
 const AboutMe = () => {
     return (
         <section id='projects-section'>
-            <div className='text-center py-24 relative border-border/50 border-b'>
+            <div className='bg-black/40 text-center py-24 relative border-border/50 border-b'>
                 <TextAnimate className="text-3xl md:text-5xl font-bold tracking-tighter text-balance">
                     About Me
                 </TextAnimate>

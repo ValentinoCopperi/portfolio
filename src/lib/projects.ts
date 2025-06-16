@@ -1,4 +1,78 @@
+export interface Project {
+    id: number;
+    title: string;
+    short_description: string;
+    description: string;
+    functions: {
+        title: string;
+        description: string;
+    }[];
+    images: string[];
+    video?: string;
+    technologies: string[];
+    createdAt: string;
+    links: {
+        repository: string;
+        demo: string;
+    };
+    category: 'full-stack' | 'frontend' | 'backend' | 'other';
+    projectType: 'personal' | 'professional';
+}
+
 export const projects: Project[] = [
+    {
+        id: 8,
+        title: "Car Market Argentina",
+        short_description: "Full-stack web application for a top Buenos Aires car dealership, focused on efficient operations and excellent customer experience.",
+        description: "This full-stack platform, built for a prominent car dealership in Buenos Aires, empowers sellers to publish and manage inventory effortlessly. Buyers get personalized subscription alerts and can chat in real-time with sales reps. It features a modern UI and a dashboard with key metrics for smart business decisions.",
+        images: ["car-market/car-1.png","car-market/car-7.png","car-market/car-8.png","car-market/car-5.png","car-market/car-4.png","car-market/car-6.png","car-market/car-9.png", "car-market/car-2.png", "car-market/car-3.png"],
+        createdAt: "March 2025 - June 2025",
+        links: {
+            demo: "https://carmarketarg.com",
+            repository: "https://github.com/valentino/ideas-generator"
+        },
+        category: "full-stack",
+        projectType: "professional",
+        functions: [
+            {
+                title: "AWS S3",
+                description: "Utilizes AWS S3 for scalable and secure storage of car images and other media assets."
+            },
+            {
+                title: "Node.js & NestJS Backend",
+                description: "Powers the robust backend with Node.js and NestJS, implementing secure API endpoints, authentication (including JWT), and efficient data handling for the entire car marketplace."
+            },
+            {
+                title: "PostgreSQL Database",
+                description: "Manages all marketplace data, including car listings, user information, transactions, and more, within a reliable and scalable PostgreSQL database."
+            },
+            {
+                title: "Next.js Frontend",
+                description: "Delivers a fast, interactive, and SEO-friendly user experience through a modern Next.js frontend framework."
+            },
+            {
+                title: "Mercado Pago Integration",
+                description: "Enables secure and localized payment processing through Mercado Pago, facilitating transactions for car purchases and related services."
+            },
+            {
+                title: "Shadcn & Tailwind CSS",
+                "description": "Ensures a modern, responsive, and visually appealing user interface with a sleek design, built using Shadcn UI components and styled with Tailwind CSS."
+            }
+        ],
+        technologies: [
+            "Next.js",
+            "TypeScript",
+            "Node.js",
+            "NestJS",
+            "PostgreSQL",
+            "Mercado Pago API",
+            "AWS S3",
+            "Shadcn UI",
+            "Tailwind CSS",
+            "JWT (JSON Web Tokens)"
+        ]
+
+    },
     {
         id: 2,
         title: "Project Ideas Generator",
@@ -11,6 +85,7 @@ export const projects: Project[] = [
             repository: "https://github.com/valentino/ideas-generator"
         },
         category: "full-stack",
+        projectType: "professional",
         technologies: ["Next.js", "TypeScript", "Node.js", "ShadCN", "OpenAI", "PostgreSQL"],
         functions: [
             {
@@ -38,11 +113,12 @@ export const projects: Project[] = [
         short_description: "A social media platform where users can post, comment, like, and follow others.",
         description: "A full-featured Twitter clone that allows users to create and interact with posts through comments and likes. Users can follow others to see their content, and authentication is handled securely with NextAuth. The app is built with a modern stack including Next.js, Tailwind, and Prisma for an optimized experience.",
         category: "full-stack",
+        projectType: "personal",
         links: {
             demo: "https://twitter-app-valentino.vercel.app",
             repository: "https://github.com/valentino/twitter-app"
         },
-        technologies: ["Next.js", "Tailwind", "MongoDB", "Java","Spring Boot", "TypeScript", "SQL"],
+        technologies: ["Next.js", "Tailwind", "MongoDB", "Java", "Spring Boot", "TypeScript", "SQL"],
         createdAt: "December 2024",
         images: ["twitter-app-1.png", "twitter-app-2.png", "twitter-app-3.png", "twitter-app-4.png"],
         functions: [
@@ -72,7 +148,7 @@ export const projects: Project[] = [
             }
         ]
     },
-   
+
     {
         id: 3,
         title: "Taskly",
@@ -85,6 +161,7 @@ export const projects: Project[] = [
             repository: "https://chatbot-tasks.vercel.app"
         },
         category: "full-stack",
+        projectType: "personal",
         technologies: ["Next.js", "NestJS", "TypeScript", "ShadCN", "Tailwind", "Convex", "Clerk"],
         functions: [
             {
@@ -121,6 +198,7 @@ export const projects: Project[] = [
             repository: "https://github.com/valentino/english-quiz"
         },
         category: "full-stack",
+        projectType: "personal",
         technologies: ["React", "TypeScript", "Tailwind"],
         functions: [
             {
@@ -138,22 +216,3 @@ export const projects: Project[] = [
         ]
     }
 ];
-
-export interface Project {
-    id: number;
-    title: string;
-    short_description: string;
-    description: string;
-    functions: {
-        title: string;
-        description: string;
-    }[];
-    images: string[];
-    technologies: string[];
-    createdAt: string;
-    links: {
-        repository: string;
-        demo: string;
-    };
-    category: 'full-stack' | 'frontend' | 'backend' | 'other';
-}

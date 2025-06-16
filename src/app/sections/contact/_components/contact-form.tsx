@@ -10,14 +10,10 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { mailFormSchema, MailFormState } from "@/lib/contact"
 import { sendMail } from "@/actions/mail"
-
+import { useEffect } from "react"
 
 export function ContactForm() {
-
   const [state, formAction, isPending] = useActionState<MailFormState, FormData>(sendMail, null);
-
-
-  
 
   const form = useForm<z.infer<typeof mailFormSchema>>({
     resolver: zodResolver(mailFormSchema),
@@ -28,7 +24,11 @@ export function ContactForm() {
     },
   })
 
-
+  useEffect(() => {
+    if (state?.message) {
+      form.reset();
+    }
+  }, [state, form]);
 
   return (
     <Form {...form}>

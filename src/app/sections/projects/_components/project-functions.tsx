@@ -1,44 +1,38 @@
 "use client"
+import { motion } from "framer-motion"
+import { CheckCircle2 } from "lucide-react"
 
-import React from "react"
-
-interface FunctionItem {
+interface Function {
   title: string
   description: string
 }
 
-interface TimelineProps {
-  functions: FunctionItem[]
+interface Props {
+  functions: Function[]
 }
 
-const TimelineItem: React.FC<FunctionItem> = React.memo(({ title, description }) => (
-  <article>
-    <div className="flex gap-x-3 relative group rounded-lg">
-      <div className="relative last:after:hidden after:absolute after:top-0 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700 dark:group-hover:after:bg-neutral-600">
-        <div className="relative z-10 size-7 flex justify-center items-center">
-          <div className="size-2 rounded-full bg-white border-2 border-gray-300 group-hover:border-gray-600 dark:bg-neutral-800 dark:border-neutral-600 dark:group-hover:border-neutral-600"></div>
-        </div>
-      </div>
-
-      <div className="grow p-2 pb-2">
-        <h3 className="flex gap-x-1.5 font-bold">{title}</h3>
-        <div className="mt-1 -ms-1 p-1 relative z-10 inline-flex items-center gap-x-2 text-xs flex-wrap rounded-lg border border-transparent text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400">
-          <p>{description}</p>
-        </div>
-      </div>
+const Timeline = ({ functions }: Props) => {
+  return (
+    <div className="space-y-3">
+      {functions.map((func, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: index * 0.1 }}
+          className="flex items-start gap-3 group"
+        >
+          <div className="flex-shrink-0 mt-0.5">
+            <CheckCircle2 className="h-4 w-4 text-primary" />
+          </div>
+          <div>
+            <p className="text-sm font-medium">{func.title}</p>
+            <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">{func.description}</p>
+          </div>
+        </motion.div>
+      ))}
     </div>
-  </article>
-))
-
-TimelineItem.displayName = "TimelineItem"
-
-const Timeline: React.FC<TimelineProps> = ({ functions }) => (
-  <div className="border-border/50 border-t mt-2">
-    {functions.map((item, idx) => (
-      <TimelineItem key={idx} {...item} />
-    ))}
-  </div>
-)
+  )
+}
 
 export default Timeline
-
