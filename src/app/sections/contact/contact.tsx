@@ -10,7 +10,7 @@ const Contact = () => {
 
         <section className="w-full  relative border-t min-h-[600px]">
 
-            <div className="relative z-10 ">
+            <div className="relative z-10 border-b py-20">
                 <FlickeringGrid
                     className="absolute inset-0 -z-10 bg-[#060606]"
                     squareSize={4}
@@ -31,23 +31,23 @@ const Contact = () => {
                     </p>
                 </div>
 
-                <div className="max-w-3xl mx-auto py-8 px-2 relative z-10">
-                    <Card className='bg-black'>
-                        <CardHeader>
-                            <CardTitle>
-                                <h2 className="text-3xl font-bold mb-4">Lets Work Together</h2>
-                            </CardTitle>
-                            <CardDescription>
-                                <p className="text-muted-foreground mb-4">
-                                    Im currently available for freelance work and full-time positions.
-                                </p>
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <ContactForm />
-                        </CardContent>
-                    </Card>
-                </div>
+            </div>
+            <div className="max-w-3xl mx-auto py-8 px-2 relative z-10">
+                <Card className='bg-black'>
+                    <CardHeader>
+                        <CardTitle>
+                            <h2 className="text-3xl font-bold mb-4">Lets Work Together</h2>
+                        </CardTitle>
+                        <CardDescription>
+                            <p className="text-muted-foreground mb-4">
+                                Im currently available for freelance work and full-time positions.
+                            </p>
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <ContactForm />
+                    </CardContent>
+                </Card>
             </div>
         </section>
 

@@ -1,10 +1,11 @@
 import { Code2, Server, Database } from 'lucide-react'
+import { LucideIcon } from 'lucide-react'
 
 interface Skill {
   id: number
   title: string
   description: string
-  icon: any
+  icon: LucideIcon
 }
 
 export const skills: Skill[] = [
@@ -17,7 +18,7 @@ export const skills: Skill[] = [
   {
     id: 2,
     title: "Backend & API Development",
-    description: "Experience developing secure and scalable APIs with Nodejs and Java & Spring Boot.",
+    description: "Experience developing secure and scalable APIs with Nodejs & Nestjs and Java & Spring Boot.",
     icon: Server,
   },
   {

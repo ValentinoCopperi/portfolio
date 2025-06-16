@@ -6,7 +6,7 @@ import { useState } from "react";
 const TerminalAchivements = () => {
     const [isRepeating, setIsRepeating] = useState(false);
     return (
-        <Terminal className="bg-[#0A0A0A] z-10 w-full md:w-[80%] md:mx-auto">
+        <Terminal className="bg-[#050404] z-10 w-full md:w-[80%] md:mx-auto">
             <TypingAnimation key={isRepeating ? 'repeat' : 'initial'}>&gt; display achievements</TypingAnimation>
 
             <AnimatedSpan key={isRepeating ? 'repeat-1' : 'initial-1'} delay={1500} className="text-green-500 text-2xl">
