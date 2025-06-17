@@ -8,14 +8,15 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Timeline from "./_components/project-functions"
 import Carrousel from "./_components/carrousel"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, Briefcase, User, FolderOpen, Github } from "lucide-react"
+import { Menu, Briefcase, User, FolderOpen, Github, ChevronDown, ChevronUp } from "lucide-react"
 import ProjectSidebar from "./_components/sidebar"
-import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger, } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import ButtonBackgroundShine from "@/components/ui/button-animated-shine"
 
 const Projects = () => {
   const [activeProject, setActiveProject] = useState<Project>(projects[0])
   const [activeTab, setActiveTab] = useState<"personal" | "professional">("professional")
+  const [isContentExpanded, setIsContentExpanded] = useState(false)
 
   const personalProjects = projects.filter((project) => project.projectType === "personal")
   const professionalProjects = projects.filter((project) => project.projectType === "professional")
@@ -29,12 +30,26 @@ const Projects = () => {
     if (newProjects.length > 0) {
       setActiveProject(newProjects[0])
     }
+    // Reset content expansion when changing tabs
+    setIsContentExpanded(false)
   }
+
+  const handleProjectChange = (project: Project) => {
+    setActiveProject(project)
+    // Reset content expansion when changing projects
+    setIsContentExpanded(false)
+  }
+
+  // Check if description is long (more than 150 characters)
+  const isDescriptionLong = activeProject.description.length > 150
+  const displayDescription = isContentExpanded
+    ? activeProject.description
+    : activeProject.description.slice(0, 150) + (isDescriptionLong ? "..." : "")
 
   return (
     <div className="">
       {/* Header */}
-      <div className="border-b  backdrop-blur   top-0 z-20">
+      <div className="border-b backdrop-blur top-0 z-20">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex flex-col gap-3">
@@ -79,13 +94,11 @@ const Projects = () => {
                     handleTabChange={handleTabChange}
                     currentProjects={currentProjects}
                     activeProject={activeProject}
-                    setActiveProject={setActiveProject}
+                    setActiveProject={handleProjectChange}
                   />
                 </SheetContent>
               </Sheet>
             </div>
-
-
           </div>
         </div>
       </div>
@@ -100,7 +113,7 @@ const Projects = () => {
                 handleTabChange={handleTabChange}
                 currentProjects={currentProjects}
                 activeProject={activeProject}
-                setActiveProject={setActiveProject}
+                setActiveProject={handleProjectChange}
               />
             </div>
           </div>
@@ -135,31 +148,69 @@ const Projects = () => {
 
                   <Carrousel activeProject={activeProject} />
 
+                  {/* Project Content - Always visible on desktop, collapsible on mobile */}
                   <div className="space-y-6">
+                    {/* Description */}
                     <div className="prose prose-sm max-w-none">
-                      <p className="text-muted-foreground leading-relaxed text-base">{activeProject.description}</p>
+                      <p className="text-muted-foreground leading-relaxed text-base">
+                        {/* On desktop: always show full description */}
+                        <span className="hidden lg:block">{activeProject.description}</span>
+                        {/* On mobile: show truncated or full based on state */}
+                        <span className="lg:hidden">{displayDescription}</span>
+                      </p>
+
+                      {/* Read More Button - Only on Mobile and only if description is long */}
+                      {isDescriptionLong && (
+                        <div className="lg:hidden mt-4 text-center">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => setIsContentExpanded(!isContentExpanded)}
+                            className="text-primary hover:text-primary/80 font-medium border-primary/20 hover:border-primary/40"
+                          >
+                            {isContentExpanded ? (
+                              <>
+                                Show less
+                                <ChevronUp className="ml-2 h-4 w-4" />
+                              </>
+                            ) : (
+                              <>
+                                Read more
+                                <ChevronDown className="ml-2 h-4 w-4" />
+                              </>
+                            )}
+                          </Button>
+                        </div>
+                      )}
                     </div>
 
-                    <div className="space-y-3">
-                      <h3 className="text-lg font-semibold flex items-center gap-2">
-                        <span className="w-1 h-6 bg-primary rounded-full"></span>
-                        Technologies Used
-                      </h3>
-                      <div className="flex flex-wrap gap-2">
-                        {activeProject.technologies.map((tech) => (
-                          <Badge key={tech} className="text-sm px-3 py-1">
-                            {tech}
-                          </Badge>
-                        ))}
+                    {/* Technologies and Features - Always visible on desktop, conditional on mobile */}
+                    <div
+                      className={`space-y-6 ${!isContentExpanded && isDescriptionLong ? "hidden lg:block" : "block"}`}
+                    >
+                      {/* Technologies Used */}
+                      <div className="space-y-3">
+                        <h3 className="text-lg font-semibold flex items-center gap-2">
+                          <span className="w-1 h-6 bg-primary rounded-full"></span>
+                          Technologies Used
+                        </h3>
+                        <div className="flex flex-wrap gap-2">
+                          {activeProject.technologies.map((tech) => (
+                            <Badge key={tech} className="text-sm px-3 py-1">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="space-y-3">
-                      <h3 className="text-lg font-semibold flex items-center gap-2">
-                        <span className="w-1 h-6 bg-primary rounded-full"></span>
-                        Key Features
-                      </h3>
-                      <Timeline functions={activeProject.functions} />
+                      {/* Key Features */}
+                      <div className="space-y-3">
+                        <h3 className="text-lg font-semibold flex items-center gap-2">
+                          <span className="w-1 h-6 bg-primary rounded-full"></span>
+                          Key Features
+                        </h3>
+                        <Timeline functions={activeProject.functions} />
+                      </div>
                     </div>
                   </div>
                 </motion.div>

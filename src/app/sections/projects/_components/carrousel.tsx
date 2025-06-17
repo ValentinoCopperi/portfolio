@@ -23,23 +23,24 @@ interface Props {
 }
 
 const Carrousel = ({ activeProject }: Props) => {
-    return (
+
+  const repository_link = activeProject.links.repository;
+
+  return (
     <div className="space-y-6">
       {/* Project Header */}
       <div className="space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
           <div className="space-y-2">
-            <Link href={activeProject.links.demo} target="_blank" className="group">
-              <h1 className="text-3xl font-bold group-hover:text-primary transition-colors">
-                {activeProject.title}
-              </h1>
-            </Link>
+            <h1 className="text-3xl font-bold group-hover:text-primary transition-colors">
+              {activeProject.title}
+            </h1>
             <p className="text-muted-foreground text-md">{activeProject.short_description}</p>
           </div>
 
           <div className="flex flex-wrap gap-2">
             <Button asChild className="flex-1 sm:flex-none">
-              <Link href={activeProject.links.demo} target="_blank">
+              <Link href={activeProject.links.demo ?? "/"} target="_blank">
                 <Globe className="h-4 w-4 mr-2" />
                 Live Demo
               </Link>
@@ -90,11 +91,15 @@ const Carrousel = ({ activeProject }: Props) => {
                     <DialogHeader className="p-4 md:p-6 pb-2">
                       <DialogTitle className="flex items-center justify-between">
                         <span>{activeProject.title}</span>
-                        <Link href={activeProject.links.demo} target="_blank">
-                          <Button size="sm" variant="ghost">
-                            <ExternalLink className="h-4 w-4" />
-                          </Button>
-                        </Link>
+                        {
+                          repository_link && (
+                            <Link href={repository_link} target="_blank">
+                              <Button size="sm" variant="ghost">
+                                <ExternalLink className="h-4 w-4" />
+                              </Button>
+                            </Link>
+                          )
+                        }
                       </DialogTitle>
                       <DialogDescription>
                         Screenshot {index + 1} of {activeProject.images.length}

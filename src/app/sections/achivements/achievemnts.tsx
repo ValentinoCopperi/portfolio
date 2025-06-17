@@ -16,7 +16,7 @@ export function Achievements() {
                         maxOpacity={0.2}
                         flickerChance={0.1}
                     />
-                    <div className='text-center relative'>
+                    <div className='text-center relative w-[70%] mx-auto'>
                         <TextAnimate className="text-3xl md:text-5xl font-bold tracking-tighter text-balance">
                             Achievements
                         </TextAnimate>

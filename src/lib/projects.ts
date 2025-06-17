@@ -12,8 +12,8 @@ export interface Project {
     technologies: string[];
     createdAt: string;
     links: {
-        repository: string;
-        demo: string;
+        repository?: string;
+        demo?: string;
     };
     category: 'full-stack' | 'frontend' | 'backend' | 'other';
     projectType: 'personal' | 'professional';
@@ -29,7 +29,6 @@ export const projects: Project[] = [
         createdAt: "March 2025 - June 2025",
         links: {
             demo: "https://carmarketarg.com",
-            repository: "https://github.com/valentino/ideas-generator"
         },
         category: "full-stack",
         projectType: "professional",
