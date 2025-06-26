@@ -5,6 +5,7 @@ import Projects from "./sections/projects/projects"
 import SkillsGrid from "./sections/skills/skills-grid"
 import { Achievements } from "./sections/achivements/achievemnts"
 import Contact from "./sections/contact/contact"
+import ExperiencePage from "./sections/experience/experience.page"
 
 
 export default function Home() {
@@ -20,6 +21,8 @@ export default function Home() {
       <AboutMe />
 
       <Projects />
+
+      <ExperiencePage />
 
       <Achievements />
 
